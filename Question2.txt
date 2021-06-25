@@ -31,6 +31,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 https://www.w3schools.com/jsref/jsref_filter.asp
 
+https://www.educba.com/nested-loop-in-javascript/
+
+https://www.codegrepper.com/code-examples/javascript/how+to+push+mutual+array+elements+in+an+array+nested+loop+javascript
+
 * First Try Coding it:
 function dedupeArray(array) {
   let newArray = [];
