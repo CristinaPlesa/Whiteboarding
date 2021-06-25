@@ -8,3 +8,33 @@ Output: false
 
 Input: "copyright"
 Output: true
+
+
+* Notes:
+1. find a way to loop through the string
+2. compare elements in the string to find if there are any matches or repeating ones
+3. if there are matches, return false, if not return true
+4. this one seems very similar to Question2, so I'll use a similar method, but just with a string and not an array
+
+* Questions:
+1. Will the string ever be more than one word?
+2. Will the string ever be empty?
+3. Does the elements have to take into account case-sensitivity?
+
+* Thought Process:
+-For this one, I find it to be very similar to Question2, so I will be using similar code, just adjusting it to be looping through a string instead of an array.
+
+* First Try Coding it:
+function unique(string) {
+  let checked = ""
+  for (let i = 0; i < string.length; i++) {
+    for (let j = 0; j <= i; j++) {
+      if (j === i) {
+        checked += string[i]
+      } else if (string[i] === checked[j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}

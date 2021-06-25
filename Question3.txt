@@ -31,8 +31,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
+https://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string
+
 * First Try Coding it:
 function stringCompression(str) {
   let count = (str.match(/a-z/g) || []).length;
   return count;
 }
+
+* Second Try Coding it (maybe it is very similar to Question2 route?):
