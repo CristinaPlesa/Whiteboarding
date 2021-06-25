@@ -5,3 +5,34 @@ Write an algorithm that takes a string with repeated characters and compresses t
 Example
 Input: "aaabccdddda"
 Output: "3ab2c4da"
+
+
+* Notes:
+1. search string with a loop 
+2. at each element see if they match other elements
+3. if they match add increment to a variable
+4. if they don't match keep looping
+5. wait what about the last element in the example? It doesn't count towards the first three elements of a. So, if I loop through that, how will I ensure it doesn't simply increment to the beginning?
+
+* Questions:
+1. Why doesn't the last a in the example string get compressed to the front of the string?
+2. Will the string elements always be letters? Can they be numbers? or other symbols?
+
+* Thought Process:
+-Instead of writing a loop what about using a built in Javascript method to find the number of instances in a string?
+-One such method would be match().
+-In order to use the match() method, I also need to use a regular expression to find repeating characters. One problem I could see with this is how do I know which character exist in the string beforehand? I don't, so I must use an all encompassing regex, which means I have to write out my if conditionals carefully. 
+-I think also I still do need a loop in order to go through each element. I'm not sure. I should write out the function and test it out. See what the output is without a loop.
+
+* Resources:
+https://www.w3schools.com/jsref/jsref_match.asp
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+* First Try Coding it:
+function stringCompression(str) {
+  let count = (str.match(/a-z/g) || []).length;
+  return count;
+}
