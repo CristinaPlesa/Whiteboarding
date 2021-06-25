@@ -1,9 +1,40 @@
 Question #1: Turning Strings to URLs
+
 URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
 
 You may not use the replace() method or regular expressions to solve this problem. Solve the problem with and without recursion.
 
 Example
 Input: "Jasmine Ann Jones"
-
 Output: "Jasmine%20Ann%20Jones"
+
+
+* Notes:
+1. search for all spaces in a string
+2. remove spaces and replace with %20
+3. cannot use Replace method or regex
+
+* Questions:
+1. Will there ever be a case of a string with only one word?
+2. Will this string ever contain numbers?
+3. Will the string ever have empty spaces at the front or end the string?
+
+* Thought Process:
+-What if I use the split() method to split the string by spaces, and then push the words to an array. 
+-Loop through the array and as I do that push each word into an empty string with the %20 right after. The only one that shouldn't count would be the very last word: that word still needs to be looped through though to be pushed at the end of the string. 
+-So, maybe have a if conditional to state the very last word will simple be pushed, while all the others get a %20 concatenated to the end. 
+-Do I need to split the string into an array or can I simply loop through the string and instead of pushing the " " element to a new string, %20 would be pushed instead.
+
+* First Try Coding it:
+function replaceSpace(str) {
+  let newString;
+  const wordArray = str.split(" ");
+  for(let i = 0; i < wordArray.length; i++) {
+    if (i = (wordArray.length - 1)) {
+      newString.push(i)
+    } else {
+      newString.push(i + "%20")
+    }
+  }
+  return newString;
+}

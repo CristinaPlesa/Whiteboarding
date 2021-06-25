@@ -1,4 +1,5 @@
 Question #5: Array Sorting
+
 Write an algorithm that sorts an array without using the sort() method. There are many different sorting algorithms - take the time to read about the following:
 
 Quick sort
@@ -11,6 +12,5 @@ You may implement any of the above algorithms (or your own) to solve the problem
 
 Example
 Input: [9, 2, 7, 12]
-
 Output: [2, 7, 9, 12]
 
