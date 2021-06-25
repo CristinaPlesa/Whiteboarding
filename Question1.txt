@@ -25,6 +25,11 @@ Output: "Jasmine%20Ann%20Jones"
 -So, maybe have a if conditional to state the very last word will simple be pushed, while all the others get a %20 concatenated to the end. 
 -Do I need to split the string into an array or can I simply loop through the string and instead of pushing the " " element to a new string, %20 would be pushed instead.
 
+* Resources:
+https://www.w3schools.com/jsref/jsref_split.asp
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
 * First Try Coding it:
 function replaceSpace(str) {
   let newString;

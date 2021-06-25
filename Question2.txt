@@ -5,3 +5,33 @@ Write an algorithm that removes duplicates from an array. Do not use a function 
 Example
 Input: [7, 9, "hi", 12, "hi" 7, 53]
 Output: [7, 9, "hi", 12, 53]
+
+
+* Notes:
+1. find a way to look through each element in the array
+2. compare elements to find if there are any matches
+3. if there are matches only push one of those elements to a new array
+
+* Questions:
+1. Will there ever be an empty array?
+2. 
+
+* Thought Process:
+-Besides using Filter() I'm unsure of what other methods could be used to find the repeating elements in the array.
+-The only way of solving this that comes to mind without using a method is using a nested loop in a function.
+-The first loop will look through each element starting at the index 0. The second loop will start at element 1? 
+-Once these two loops are in place, there has to be a way to compare the two elements in each loop. 
+-If there is a match, only one of the elements will be pushed to a new array.
+-Return the new array.
+
+* Resources:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+https://www.w3schools.com/jsref/jsref_filter.asp
+
+* First Try Coding it:
+function reduceArray(array) {
+  let newArray = [];
+
+  return newArray;
+}
