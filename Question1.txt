@@ -30,10 +30,23 @@ function replaceSpace(str) {
   let newString;
   const wordArray = str.split(" ");
   for(let i = 0; i < wordArray.length; i++) {
-    if (i = (wordArray.length - 1)) {
+    if (i === (wordArray.length - 1)) {
       newString.push(i)
     } else {
       newString.push(i + "%20")
+    }
+  }
+  return newString;
+}
+
+* Second try without splitting string into an array:
+function replaceSpace(str) {
+  let newString;
+  for(let i = 0; i <= str.length; i++) {
+    if (i === " ") {
+      newString.push("%20")
+    } else {
+      newString.push(i)
     }
   }
   return newString;
