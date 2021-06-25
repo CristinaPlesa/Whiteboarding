@@ -23,6 +23,8 @@ Output: [7, 9, "hi", 12, 53]
 -Once these two loops are in place, there has to be a way to compare the two elements in each loop. 
 -If there is a match, only one of the elements will be pushed to a new array.
 -Return the new array.
+-My first solution wouldn't have worked because either way the current index of the array would be pushed to the new array. 
+-In order to have the innner array loop through correctly j has to be looking at i's current position and compare that to every element before that in j. This will ensure that if there are any matches in the previous indexed elements, the function will either break the loop or push the element to the newArray.
 
 * Resources:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
@@ -38,6 +40,21 @@ function dedupeArray(array) {
         newArray.push(array[i])
       } else {
         newArray.push(array[i])
+      }
+    }
+  }
+  return newArray;
+}
+
+* FINAL Refactored Solution:
+function dedupeArray(array) {
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j <= i; j++) {
+      if (j === i) {
+        newArray.push(array[i]);
+      } else if (array[i] === array[j]) {
+        break;
       }
     }
   }

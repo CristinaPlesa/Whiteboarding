@@ -69,9 +69,9 @@ function replaceSpace(str) {
   let newString = "";
   for (let i = 0; i <= str.length; i++) {
     if (str[i] === " ") {
-      newString.push("%20")
+      newString.push("%20");
     } else {
-      newString.push(i)
+      newString.push(i);
     }
   }
   return newString;
@@ -82,9 +82,9 @@ function replaceSpace(str) {
   let newString = "";
   for (let i = 0; i <= str.length; i++) {
     if (str[i] === " ") {
-      newString += "%20"
+      newString += "%20";
     } else {
-      newString += str[i]
+      newString += str[i];
     }
   }
   return newString;
