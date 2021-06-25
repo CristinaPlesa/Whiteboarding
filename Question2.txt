@@ -30,8 +30,16 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://www.w3schools.com/jsref/jsref_filter.asp
 
 * First Try Coding it:
-function reduceArray(array) {
+function dedupeArray(array) {
   let newArray = [];
-
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 1; j < array.length; j++) {
+      if (array[i] === array[j]) {
+        newArray.push(array[i])
+      } else {
+        newArray.push(array[i])
+      }
+    }
+  }
   return newArray;
 }

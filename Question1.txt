@@ -24,6 +24,7 @@ Output: "Jasmine%20Ann%20Jones"
 -Loop through the array and as I do that push each word into an empty string with the %20 right after. The only one that shouldn't count would be the very last word: that word still needs to be looped through though to be pushed at the end of the string. 
 -So, maybe have a if conditional to state the very last word will simple be pushed, while all the others get a %20 concatenated to the end. 
 -Do I need to split the string into an array or can I simply loop through the string and instead of pushing the " " element to a new string, %20 would be pushed instead.
+-Push does not work, because it's meant to only push Array elements, not strings.
 
 * Resources:
 https://www.w3schools.com/jsref/jsref_split.asp
@@ -32,9 +33,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 * First Try Coding it:
 function replaceSpace(str) {
-  let newString;
+  let newString = "";
   const wordArray = str.split(" ");
-  for(let i = 0; i < wordArray.length; i++) {
+  for (let i = 0; i < wordArray.length; i++) {
     if (i === (wordArray.length - 1)) {
       newString.push(i)
     } else {
@@ -44,14 +45,46 @@ function replaceSpace(str) {
   return newString;
 }
 
+* This is refactored with if conditional still:
+  if (i === (wordArray.length - 1)) {
+    newString += wordArray[i]
+  } else {
+    newString += wordArray[i] + "%20";
+  }
+
+* FINAL Refactored FIRST Solution:
+function replaceSpace(str) {
+  let newString = "";
+  const wordArray = str.split(" ");
+  for (let i = 0; i < wordArray.length - 1; i++) {
+    newString += wordArray[i] + "%20";
+  }
+  newString += (wordArray.length - 1);
+  return newString;
+}
+
+
 * Second try without splitting string into an array:
 function replaceSpace(str) {
-  let newString;
-  for(let i = 0; i <= str.length; i++) {
-    if (i === " ") {
+  let newString = "";
+  for (let i = 0; i <= str.length; i++) {
+    if (str[i] === " ") {
       newString.push("%20")
     } else {
       newString.push(i)
+    }
+  }
+  return newString;
+}
+
+* FINAL Refactored SECOND Solution:
+function replaceSpace(str) {
+  let newString = "";
+  for (let i = 0; i <= str.length; i++) {
+    if (str[i] === " ") {
+      newString += "%20"
+    } else {
+      newString += str[i]
     }
   }
   return newString;
